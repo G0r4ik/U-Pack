@@ -1,0 +1,156 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content="...")
+    meta(name="keywords" content="..." )
+    meta(name="author" content="Egor III")
+    link(rel="author" href="https://")
+    meta(name="robots" content="index, follow")
+    // favicon  
+    // link(rel="canonical" href="https://example.com/main")
+    link(rel="stylesheet" href="./style.css", attr)
+    title У-Пак
+  body 
+    include ./includes/header.pug
+    main
+      section.intro
+        .intro__inner 
+          h1.intro__text Ю-Упак - это полный цикл производства упаковки из всех видов картона
+          a.intro__link(href="#") Подобрать упаковку
+
+
+      section.individual
+        .container 
+          .individual__inner 
+            .title Поможем подобрать индивидуальный вариант упаковки для вас
+            form.individual__form
+              .individual__input-wrapper
+                input.individual__input#name(type="text" name="name" required)
+                label.individual__label(for="name") Имя<sup class="individual__sub">*</sup>
+              .individual__input-wrapper
+                input.individual__input#telephone(type="telephone" name="telephone" required)
+                label.individual__label(for="telephone") Номер телефона<sup class="individual__sub">*</sup>
+              .individual__input-wrapper
+                input.individual__input#email(type="email" name="email")
+                label.individual__label(for="email") E-mail
+              button.individual__button Отправить
+
+
+      section.our-company
+        .our-company__inner 
+          h2.title.title_our-company Наша компания
+          .our-company-text 
+            p.our-company__p ООО “ЮНА” - это полный цикл производства упаковки из всех видов картона.
+            p.our-company__p Основная цель компании - учитывая интересы наших клиентов, обеспечить отличный сервис и качество производимой продукции.
+            p.our-company__p Быстрые сроки изготовления, качество продукции, удобный сервис, обеспечивают нам большое количество заказов и довольных клиентов.
+          a.our-company__btn(href="#") Заказать упаковку
+
+        .our-company__decorate 
+          span.our-company__decorate-text О НАС
+      -
+        var boxes = [
+          {url:'./img/boxes-corrugated', href:"#", title: 'Гофрокороба'},
+          {url:'./img/boxes-application', href:"#", title: 'Коробки по применению'},
+          {url:'./img/boxes-printing', href:"#", title: 'Коробки с печатью'},
+          {url:'./img/boxes-bookbinding-cardboard', href:"#", title: 'Изделия из переплетного картона'},
+        ]
+      section.boxes
+        .container 
+          .boxes__inner 
+            h2.title Сделаем коробки которые вам нужны
+            .boxes__items 
+              each box in boxes 
+                a.boxes__item(href=box.href)
+                  picture 
+                    source(srcset=box.url + '.webp' type="image/webp")
+                    img.boxes__img(src=box.url + '.png' alt=box.title)
+                  p.boxes__title=box.title
+            a.boxes__link-for-catalog(href="#") Перейти в каталог <img class="boxes__arrow" src="./img/arrow.svg" alt=""> 
+
+
+      section.need-box
+        .container 
+          .need-box__inner 
+            h2.title.title_need-box Нужна уникальная упаковка? Разработаем её для вас!
+            p.need-box__text Воплощение любых конструкторских идей от простых до самых сложных упаковочных решений
+
+            a.need-box__link(href="#") Подобрать упаковку
+
+
+      -
+        var advantages = [
+          {title: "Поддержка", text:"Наши консультанты помогут вам разобраться в особенностях нашей компании. Они так же помогут подобрать индивидуальное решение именно для вас." },
+          {title: "Опыт", text:"Уже много лет наша компания успешно производит упаковку любого вида, для самых разных решений." },
+          {title: "Сервис", text:"Наша компания воплотит в жизнь любую конструкторскую идею упаковки из картона в высоком качестве и в очень быстрые сроки." }
+        ]  
+      section.why-we 
+        .container 
+          .why-we__inner
+            picture 
+              source(srcset=" ./img/dog-and-box.webp 768w, ./img/dog-and-box-large.webp 1920w" type="image/webp")
+              img.why-we__dog-and-box( srcset="./img/dog-and-box.png 768w, ./img/dog-and-box-large.png 1920w" src="./img/dog-and-box.png" alt="dog and box")
+            .why-we__text-wrapper 
+              h2.title.title_why-we Почему именно мы?
+              .why-we__text 
+                each el, i in advantages 
+                  .why-we__top-text 
+                    span.why-we__number='0'+(i+1)
+                    b.why-we__title=el.title 
+                  p.why-we__p=el.text 
+
+
+      section.faq
+        .container 
+          h2.title Ответим на ваши вопросы
+          .faq__inner 
+            details.faq__accordion 
+              summary.faq__preview Как расчитывается стоимость заказа?
+              p.faq_answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, architecto. Porro praesentium accusamus sunt, ab quia neque sint nemo non veniam alias laudantium voluptate eveniet placeat quis quam deserunt atque, quidem repudiandae? Nam iusto impedit unde officia mollitia veritatis culpa!
+            details.faq__accordion 
+              summary.faq__preview Как быстро выполнят мой заказ?
+              p.faq_answer а я не знаю
+            details.faq__accordion 
+              summary.faq__preview Сколько стоит доставка моего заказа?
+              p.faq_answer Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis beatae obcaecati atque rem reiciendis consectetur?
+            details.faq__accordion 
+              summary.faq__preview Подходит ли ваша продукция для хранения продуктов питания?
+              p.faq_answer Да. У нас есть упаковка, специально предназначенная для хранения продуктов питания. Вы можете заказать индивидуальные размеры для вашей продукции, заполнив специальную форму на нашем сайте
+            details.faq__accordion 
+              summary.faq__preview Какие документы вам нужно предоставить?
+              p.faq_answer Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, illo.
+
+
+      section.contact
+        .container 
+          h2.title.title_contact Местоположение и контакты
+          .contact__inner 
+            picture.contact__picture 
+              source(srcset="./img/map.webp 768w, ./img/map-large.webp 1920w" type="image/webp")
+              img.contact__map(srcset="./img/map.png 768w, ./img/map-large.png 1920w" src="./img/map-large.png" alt="Адрес: 143442, Московская обл. г. Красногорск, Аристово, ул. Светлая, 19, пом. 2339")
+            .contact__text-wrapper
+              .contact__group-text
+                b.contact__title Адрес:
+                p.contact__text Адрес: 143442, Московская обл. г. Красногорск, Аристово, ул. Светлая, 19, пом. 2339
+
+              .contact__group-text
+                b.contact__title Email:
+                a.contact__text(href="mailto:korobka@help.ru") korobka@gmail.com
+                a.contact__text(href="mailto:korobka@help.ru") korobka@help.ru
+
+              .contact__group-text
+                b.contact__title Номер:
+                a.contact__text(href="tel:+79834565665") +7 (983) 456-56-65
+                a.contact__text(href="tel:+79834565665") +7 (983) 456-56-65
+
+
+    hr.line
+    include ./includes/footer.pug
+    script(src="./main.js")
+
+
+
+
+

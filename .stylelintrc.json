@@ -1,0 +1,20 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-plugin-stylus/standard"],
+  "rules": {
+    "stylus/declaration-colon": "always",
+    "stylus/semicolon": "always",
+    "stylus/pythonic": "never",
+    "stylus/single-line-comment-no-empty": null,
+    "stylus/no-eol-whitespace": null,
+    "stylus/selector-list-comma": null,
+    "color-function-notation": "legacy",
+    "string-quotes": "single",
+    "selector-class-pattern": null,
+    "alpha-value-notation": "number",
+    "no-missing-end-of-source-newline": null,
+    "declaration-empty-line-before": null,
+    "stylus/media-feature-colon": null,
+    "stylus/selector-list-comma-newline-after": null,
+    "selector-pseudo-element-colon-notation": "single"
+  }
+}

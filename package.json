@@ -1,0 +1,40 @@
+{
+  "type": "module",
+  "name": "u-pack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"pug -w ./pug/index.pug -o ../У-ПАК/\" \"stylus -w ./stylus/style.styl -o ../У-ПАК/style.css\"",
+    "pug": "pug ./pug/index.pug -o ../У-ПАК/build",
+    "stylus": "stylus ./stylus/style.styl -o ../У-ПАК/style.css && npx postcss ./style.css --use autoprefixer -d ./ && npx postcss ./style.css --use cssnano > ./build/style.css",
+    "minify": "del /q .\\build\\img && node ./js/imagemin.js && del .\\style.css ",
+    "babel": "babel ./main.js -d ./build && terser ./build/main.js -o ./build/main.js",
+    "moveFonts": "mkdir .\\build\\fonts  && copy .\\fonts .\\build\\fonts\\",
+    "build": "npm run pug && npm run stylus && npm run minify && npm run babel && npm run moveFonts",
+    "lintCss": "npx stylelint \"**/*.styl\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.1.0",
+    "del": "^6.0.0",
+    "imagemin": "^8.0.1",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^7.0.0",
+    "postcss": "^8.4.7",
+    "postcss-cli": "^9.1.0",
+    "stylelint": "^14.5.1",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-plugin-stylus": "^0.13.1",
+    "terser": "^5.12.0"
+  }
+}

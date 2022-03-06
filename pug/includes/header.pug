@@ -1,0 +1,31 @@
+header.header 
+  .container 
+    .header__inner 
+      input.hamburger__checkbox(type="checkbox" name="" id="hamburger__checkbox" )
+      label.hamburger__lines(for="hamburger__checkbox")
+        span.hamburger__line.hamburger__line_1
+        span.hamburger__line.hamburger__line_2
+        span.hamburger__line.hamburger__line_3
+
+      ul.header__list 
+        li.header__item 
+          a.header__link(href="#") О компании
+        li.header__item 
+          a.header__link(href="#") Продукция
+        li.header__item 
+          a.header__link(href="#") Коробки на заказ
+        li.header__item 
+          a.header__link(href="#") Контакты
+
+      a.logo(href="index.html")
+        picture 
+          source(srcset="./img/logo.webp" type="image/webp")
+          img.logo__img(src="./img/logo.png" alt="logo")
+        .logo__text 
+          h1.logo__title Ю-Упак
+          h2.logo__subtitle Картонная упаковка
+
+      .search-input-wrapper 
+        label(for="search-input")
+        img.search-input-icon(src="./img/search-input-icon.svg" alt="search-input-icon")
+        input.search-input(type="search" id="search-input")
