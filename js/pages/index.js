@@ -1,0 +1,1 @@
+"use strict";var individualInputs=document.querySelectorAll(".individual__input");individualInputs.forEach(function(i){var n=i.nextSibling;i.addEventListener("input",function(){i.value&&(n.style.display="none")})});

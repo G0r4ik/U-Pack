@@ -1,0 +1,1 @@
+"use strict";var hamburgerLabel=document.querySelector(".hamburger__lines "),hamburgerCheckbox=document.querySelector(".hamburger__checkbox"),checked=!1;hamburgerLabel.addEventListener("keydown",function(e){13===e.keyCode&&(hamburgerCheckbox.checked=!checked,checked=!checked,console.log(!checked))});
