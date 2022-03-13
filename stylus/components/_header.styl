@@ -1,5 +1,6 @@
 .header {
   padding: 8px 0;
+  border-bottom: 1px solid $color-border;
 }
 
 .header__inner {
@@ -46,9 +47,34 @@
   transition: transform 0.4s ease-in-out;
 }
 
+.header__list {
+  background: #e5e5e5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translate(-150%);
+  transition: transform 0.5s ease-in-out;
+}
+
 .hamburger__checkbox:checked ~ .header__list {
   display: block;
   transform: translateX(0);
+}
+
+.header__item {
+  visibility: hidden;
+  opacity: 0;
+  list-style-type: none;
+  margin: 25px 0;
+  transition: 1s;
+}
+
+.hamburger__checkbox:checked ~ .header__list .header__item {
+  visibility: visible;
+  opacity: 1;
+  transition: 1s;
 }
 
 .hamburger__checkbox:checked ~ .hamburger__lines .hamburger__line_1 {
@@ -61,22 +87,6 @@
 
 .hamburger__checkbox:checked ~ .hamburger__lines .hamburger__line_3 {
   transform: rotate(-45deg);
-}
-
-.header__list {
-  background: #e5e5e5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  transform: translate(-150%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.header__item {
-  list-style-type: none;
-  margin: 25px 0;
 }
 
 .header__link {
@@ -126,5 +136,7 @@
 
   .header__item {
     margin-left: 30px;
+    visibility: visible;
+    opacity: 1;
   }
 }

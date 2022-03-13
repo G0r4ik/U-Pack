@@ -1,0 +1,230 @@
+.filter__open {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.filter__open-p {
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+}
+
+.filter__background {
+  width: 0%;
+  height: 0%;
+  background: rgba(49, 51, 58, 0.4);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.filter__inner {
+  transform: translate(-150%);
+  width: 80%;
+  max-width: 290px;
+  height: 100%;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: transform 0.5s;
+  padding: 15px 30px 5px 20px;
+  overflow: auto;
+}
+
+.filter__open-input {
+  display: none;
+}
+
+.filter__open-input:checked ~ .filter__background {
+  width: 100%;
+  height: 100%;
+}
+
+.filter__open-input:checked ~ .filter__background .filter__inner {
+  transform: translate(0%);
+  transition: transform 0.2s;
+}
+
+.filter__title {
+  font-size: 24px;
+  line-height: 135.3%;
+  color: $color-text;
+}
+
+.filter__line {
+  margin: 20px 0;
+  margin-left: -20px;
+  width: calc(100% + 50px);
+  background: $color-border;
+  border: 0;
+  height: 1px;
+}
+
+.filter__accordion {
+  display: flex;
+  flex-direction: column;
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
+}
+
+.filter__top-item {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 105.8%;
+  color: $color-text;
+  list-style: none;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    background: url('./img/checkmark3.svg') no-repeat;
+    width: 12px;
+    height: 7px;
+    margin-left: 15px;
+    transition: transform 0.3s;
+  }
+}
+
+.filter__accordion[open] .filter__top-item:after {
+  transform: rotate(-180deg);
+  transition: transform 0.3s;
+}
+
+.filter__accordion[open] .filter__top-item {
+  margin-bottom: 25px;
+}
+
+.filter__item {
+  font-size: 16px;
+  line-height: 19px;
+  color: $color-text-secondary;
+  margin: 10px 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filter__range {
+  margin-top: 1px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter__input-range {
+  width: 45%;
+  padding: 5px 20px;
+  font-size: 16px;
+  line-height: 19px;
+  color: $color-text-secondary;
+}
+
+.filter-label-input {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.filter__checkbox-label {
+  font-size: 16px;
+  line-height: 19px;
+  color: $color-text-secondary;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    background: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: 2px;
+  }
+}
+
+.filter__checkbox {
+  display: none;
+}
+
+.filter__checkbox:checked + .filter__checkbox-label:before {
+  background: #08a652;
+  border: 1px solid #08a652;
+}
+
+.filter__checkbox:checked + .filter__checkbox-label:after {
+  content: '';
+  background: url('./img/checkmark4.svg');
+  width: 11px;
+  height: 8px;
+  position: absolute;
+  left: 4px;
+}
+
+// nouislider ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.noUi-target {
+  border-radius: 0;
+  background: #f5f5f5;
+  border: 0;
+  box-shadow: none;
+  height: 4px;
+}
+
+.noUi-connect {
+  background: #08a652;
+}
+
+.noUi-handle {
+  background: #08a652;
+  border: 0;
+  box-shadow: none;
+  border-radius: 50%;
+}
+
+.noUi-horizontal .noUi-handle {
+  flex-center();
+  width: 14px;
+  height: 14px;
+  right: -5px;
+
+  &:before, &:after {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    left: 3px;
+    top: 3px;
+    background: $color-bg;
+  }
+}
+
+@media (min-width: $width-large) {
+  .filter__open {
+    display: none;
+  }
+
+  .filter__background {
+    position: static;
+    z-index: 0;
+    width: 270px;
+    background: none;
+    height: auto;
+  }
+
+  .filter__inner {
+    position: static;
+    transform: translate(0);
+    width: 100%;
+    display: block;
+  }
+}

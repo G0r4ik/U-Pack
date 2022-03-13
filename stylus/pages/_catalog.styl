@@ -1,0 +1,340 @@
+// Хлебные крошки
+.breadcrumb {
+  margin: 40px 0;
+}
+
+.breadcrumbs__text {
+  text-decoration: none;
+  color: $color-text-secondary;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.breadcrumbs__icon {
+  content: '';
+  display: inline-block;
+  background: url('./img/checkmark2.svg') no-repeat;
+  width: 6px;
+  height: 8px;
+  margin: 0 10px;
+}
+
+.catalog {
+  margin-bottom: 50px;
+}
+
+// Карточки
+.cards__inner {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards__sort {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.cards__sort-select {
+  border: 0;
+  margin-left: 10px;
+}
+
+.cards__item {
+  background: $color-bg;
+  box-shadow: 0 3px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 25px 40px;
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cards__item-img {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  max-width: 230px;
+  max-height: 170px;
+  width: 100%;
+}
+
+.cards__item-rating {
+  margin-bottom: 20px;
+}
+
+.cards__item-title {
+  font-size: 16px;
+  line-height: 105.8%;
+  text-align: center;
+  color: $color-text;
+  margin-bottom: 15px;
+}
+
+.cards__item-price {
+  font-size: 18px;
+  line-height: 135.3%;
+  color: $color-text-secondary;
+  margin-bottom: 20px;
+}
+
+.cards__item-star {
+  margin: 0 2px;
+}
+
+.cards__item-star_active path {
+  fill: #ffff45;
+}
+
+.cards__item-button-buy {
+  button(11px, 43px);
+  width: 100%;
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pagination__first-page {
+  margin-right: 15px;
+}
+
+.pagination__prev, .pagination__next {
+  width: 10px;
+  height: 11px;
+}
+
+.pagination__prev {
+  transform: rotate(180deg);
+}
+
+.pagination__pages {
+  display: flex;
+  margin: 0 15px;
+}
+
+.pagination__page {
+  flex-center();
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+
+  &_active {
+    background: #08a652;
+    color: $color-bg;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.pagination__last-page {
+  margin-left: 20px;
+}
+
+// Not-found ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.not-found {
+  padding: 45px 0;
+}
+
+.webp .not-found {
+  background: url('./img/not-found.webp') no-repeat;
+}
+
+.no-webp .not-found {
+  background: url('./img/not-found.png') no-repeat;
+}
+
+.not-found__inner {
+  background: rgba(255, 255, 255, 0.87);
+  backdrop-filter: blur(4px);
+  padding: 60px 15px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.not-found__pretitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 135.3%;
+  color: #000;
+}
+
+.not-found__title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 103.3%;
+  text-align: center;
+  color: #08a652;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.not-found__text {
+  line-height: 147.3%;
+  text-align: center;
+  color: $color-text;
+  margin-bottom: 50px;
+}
+
+.not-found__button {
+  button(13px, 35px);
+}
+
+@media (min-width: $width-small + 1px) {
+  .webp .not-found {
+    background: url('./img/not-found-large.webp') no-repeat 100% 70% / cover;
+  }
+
+  .no-webp .not-found {
+    background: url('./img/not-found-large.png') no-repeat 100% 70% / cover;
+  }
+}
+
+@media (min-width: $width-middle) {
+  .cards__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cards__item {
+    max-width: 260px;
+    margin: 0 15px;
+    margin-bottom: 30px;
+    text-align: left;
+    align-items: flex-start;
+    padding: 20px 25px;
+  }
+
+  .cards__item-rating {
+    margin-bottom: 10px;
+  }
+
+  .cards__item-bottom-div {
+    display: flex;
+    align-items: center;
+  }
+
+  .cards__item-price {
+    order: 5;
+    display: inline;
+    margin-bottom: 0;
+  }
+
+  .cards__item-title {
+    text-align: left;
+  }
+
+  .cards__item-button-buy {
+    display: inline-block;
+    padding: 6px 40px;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: $width-large) {
+  .catalog {
+    display: flex;
+  }
+
+  .cards__sort {
+    display: block;
+  }
+
+  .cards {
+    margin-left: 30px;
+  }
+
+  .cards__inner {
+    margin-top: 0;
+    align-items: start;
+    align-content: flex-start;
+  }
+
+  .noUi-horizontal .noUi-handle {
+    width: 20px;
+    height: 20px;
+    flex-center();
+
+    &:before, &:after {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .pagination {
+    justify-content: flex-start;
+  }
+
+  .pagination__pages {
+    margin: 0 10px;
+  }
+
+  .pagination__page {
+    background: $color-bg;
+    border: 2px solid $color-border;
+    border-radius: 5px;
+    color: $color-text;
+    margin: 0 10px;
+
+    &_active {
+      color: $color-bg;
+      background: $color-text-secondary;
+      border: 0;
+    }
+  }
+
+  .pagination__prev_h, .pagination__next_h {
+    display: none;
+  }
+
+  .pagination__first-page, .pagination__last-page {
+    flex-center();
+    border-radius: 3px;
+    border: 2px solid $color-border;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .pagination__first-page {
+    margin-right: 10px;
+  }
+
+  .pagination__last-page {
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: $width-container) {
+  .cards {
+    margin-left: 30px;
+  }
+
+  .cards__item {
+    margin-left: 0;
+    margin-right: 30px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}

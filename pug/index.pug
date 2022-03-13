@@ -7,49 +7,50 @@ html(lang="ru")
     meta(name="description" content="...")
     meta(name="keywords" content="..." )
     meta(name="author" content="Egor III")
-    link(rel="author" href="https://")
     meta(name="robots" content="index, follow")
     // favicon  
     // link(rel="canonical" href="https://example.com/main")
-    link(rel="stylesheet" href="./style.css", attr)
+    link(rel="stylesheet" href="./style.css")
     title У-Пак
   body 
     include ./includes/header.pug
     main
       section.intro
         .intro__inner 
-          h1.intro__text Ю-Упак - это полный цикл производства упаковки из всех видов картона
-          a.intro__link(href="#") Подобрать упаковку
+          h2.intro__text Ю-Упак - это полный цикл производства упаковки из всех видов картона
+          a.intro__link(href="./catalog.html") Подобрать упаковку
 
 
       section.individual
         .container 
           .individual__inner 
-            .title Поможем подобрать индивидуальный вариант упаковки для вас
+            h2.title Поможем подобрать индивидуальный вариант упаковки для вас
             form.individual__form
               .individual__input-wrapper
                 input.individual__input#name(type="text" name="name" required)
                 label.individual__label(for="name") Имя<sup class="individual__sub">*</sup>
               .individual__input-wrapper
-                input.individual__input#telephone(type="telephone" name="telephone" required)
+                input.individual__input#telephone(type="tel" name="telephone" required)
                 label.individual__label(for="telephone") Номер телефона<sup class="individual__sub">*</sup>
               .individual__input-wrapper
                 input.individual__input#email(type="email" name="email")
                 label.individual__label(for="email") E-mail
-              button.individual__button Отправить
+              button.individual__button(type="submit") Отправить
 
 
       section.our-company
         .our-company__inner 
-          h2.title.title_our-company Наша компания
+          h3.title.title_our-company Наша компания
           .our-company-text 
             p.our-company__p ООО “ЮНА” - это полный цикл производства упаковки из всех видов картона.
             p.our-company__p Основная цель компании - учитывая интересы наших клиентов, обеспечить отличный сервис и качество производимой продукции.
             p.our-company__p Быстрые сроки изготовления, качество продукции, удобный сервис, обеспечивают нам большое количество заказов и довольных клиентов.
-          a.our-company__btn(href="#") Заказать упаковку
+          a.our-company__btn(href="./catalog.html") Заказать упаковку
 
         .our-company__decorate 
           span.our-company__decorate-text О НАС
+
+
       -
         var boxes = [
           {url:'./img/boxes-corrugated', href:"#", title: 'Гофрокороба'},
@@ -60,7 +61,7 @@ html(lang="ru")
       section.boxes
         .container 
           .boxes__inner 
-            h2.title Сделаем коробки которые вам нужны
+            h3.title Сделаем коробки которые вам нужны
             .boxes__items 
               each box in boxes 
                 a.boxes__item(href=box.href)
@@ -68,16 +69,15 @@ html(lang="ru")
                     source(srcset=box.url + '.webp' type="image/webp")
                     img.boxes__img(src=box.url + '.png' alt=box.title)
                   p.boxes__title=box.title
-            a.boxes__link-for-catalog(href="#") Перейти в каталог <img class="boxes__arrow" src="./img/arrow.svg" alt=""> 
+            a.boxes__link-for-catalog(href="./catalog.html") Перейти в каталог <img class="boxes__arrow" src="./img/arrow.svg" alt=""> 
 
 
       section.need-box
         .container 
           .need-box__inner 
-            h2.title.title_need-box Нужна уникальная упаковка? Разработаем её для вас!
+            h3.title.title_need-box Нужна уникальная упаковка? Разработаем её для вас!
             p.need-box__text Воплощение любых конструкторских идей от простых до самых сложных упаковочных решений
-
-            a.need-box__link(href="#") Подобрать упаковку
+            a.need-box__link(href="./catalog.html") Подобрать упаковку
 
 
       -
@@ -93,7 +93,7 @@ html(lang="ru")
               source(srcset=" ./img/dog-and-box.webp 768w, ./img/dog-and-box-large.webp 1920w" type="image/webp")
               img.why-we__dog-and-box( srcset="./img/dog-and-box.png 768w, ./img/dog-and-box-large.png 1920w" src="./img/dog-and-box.png" alt="dog and box")
             .why-we__text-wrapper 
-              h2.title.title_why-we Почему именно мы?
+              h3.title.title_why-we Почему именно мы?
               .why-we__text 
                 each el, i in advantages 
                   .why-we__top-text 
@@ -104,7 +104,7 @@ html(lang="ru")
 
       section.faq
         .container 
-          h2.title Ответим на ваши вопросы
+          h3.title Ответим на ваши вопросы
           .faq__inner 
             details.faq__accordion 
               summary.faq__preview Как расчитывается стоимость заказа?
@@ -125,7 +125,7 @@ html(lang="ru")
 
       section.contact
         .container 
-          h2.title.title_contact Местоположение и контакты
+          h3.title.title_contact Местоположение и контакты
           .contact__inner 
             picture.contact__picture 
               source(srcset="./img/map.webp 768w, ./img/map-large.webp 1920w" type="image/webp")
@@ -148,7 +148,10 @@ html(lang="ru")
 
     hr.line
     include ./includes/footer.pug
-    script(src="./main.js")
+    script(src="./js/vendors/webp.js")
+    script(src="./js/pages/index.js")
+    script(src="./js/hamburger.js")
+
 
 
 

@@ -1,3 +1,4 @@
+// INTRO ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .intro {
   padding: 45px 0;
   margin-bottom: 50px;
@@ -32,9 +33,7 @@
   display: inline-block;
 }
 
-// 
-// 
-// 
+// INDIVIDUAL ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .individual {
   margin-bottom: 80px;
 }
@@ -60,7 +59,7 @@
   position: absolute;
   left: 35px;
   line-height: 147.3%;
-  color: #e0e0e0;
+  color: $color-border;
   pointer-events: none;
 }
 
@@ -70,7 +69,7 @@
 
 .individual__input {
   width: 100%;
-  border: 1px solid #e0e0e0;
+  border: 1px solid $color-border;
   box-sizing: border-box;
   border-radius: 5px;
   padding: 12px 35px;
@@ -84,9 +83,7 @@
   margin: 0 auto;
 }
 
-// 
-// 
-// 
+// OUR-COMPANY ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .our-company {
   padding: 60px 0;
   margin-bottom: 70px;
@@ -126,9 +123,7 @@
   display: none;
 }
 
-// 
-// 
-// 
+// BOXES ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .boxes {
   margin-bottom: 75px;
 }
@@ -149,11 +144,11 @@
   width: 270px;
   height: 277px;
   margin-bottom: 55px;
-  transition: 0.5s transform;
+  transition: transform 0.5s;
 
   &:hover, &:focus {
     transform: scale(1.1);
-    transition: 0.5s transform;
+    transition: transform 0.5s;
   }
 
   &:first-child {
@@ -170,6 +165,7 @@
 }
 
 .boxes__title {
+  flex-center();
   position: absolute;
   left: 0;
   bottom: 0;
@@ -180,7 +176,6 @@
   background: rgba(98, 105, 108, 0.85);
   line-height: 109.3%;
   height: 65px;
-  flex-center();
 }
 
 .boxes__link-for-catalog {
@@ -196,9 +191,7 @@
   margin-left: 5px;
 }
 
-// 
-// 
-// 
+// NEED-BOX ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .need-box {
   padding: 115px 0;
 }
@@ -230,9 +223,7 @@
   button(16px, 18px);
 }
 
-// 
-// 
-// 
+// WHY-WE ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .why-we {
   margin-top: 65px;
 }
@@ -277,16 +268,14 @@
   color: $color-text-secondary;
 }
 
-// 
-// 
-// 
+// FAQ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .faq {
   margin-top: 70px;
 }
 
 .faq__inner {
   background: $color-bg;
-  border: 1px solid #e0e0e0;
+  border: 1px solid $color-border;
   box-sizing: border-box;
   box-shadow: 1px 0 23px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -295,7 +284,7 @@
 
 .faq__accordion {
   padding: 15px 10px 15px 30px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid $color-border;
 
   &:last-child {
     border-bottom: 0;
@@ -304,7 +293,6 @@
 
 .faq__preview {
   cursor: pointer;
-  font-weight: 500;
   line-height: 135.3%;
   color: $color-text;
   margin-left: 30px;
@@ -336,21 +324,22 @@
   margin-top: 10px;
 }
 
-// 
-// 
-// 
+// Contact ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .contact {
   margin-top: 75px;
 }
 
 .contact__inner {
   padding-bottom: 45px;
+  text-align: center;
 }
 
 .contact__map {
   width: 100%;
+  margin: 0 auto;
   margin-top: 35px;
   margin-bottom: 30px;
+  max-width: 500px;
 }
 
 .contact__title {
@@ -465,10 +454,6 @@
     font-size: 36px;
   }
 
-  .need-box__text {
-    font-weight: 400;
-  }
-
   .why-we {
     margin-top: 120px;
   }
@@ -513,15 +498,13 @@
   }
 
   .contact__inner {
+    text-align: left;
     display: flex;
   }
 
   .contact__picture {
     width: 60%;
     margin-right: 30px;
-  }
-
-  .contact__map {
   }
 
   .contact__text-wrapper {

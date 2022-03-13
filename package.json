@@ -5,11 +5,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"pug -w ./pug/index.pug -o ../У-ПАК/\" \"stylus -w ./stylus/style.styl -o ../У-ПАК/style.css\"",
-    "pug": "pug ./pug/index.pug -o ../У-ПАК/build",
+    "dev": "concurrently \"pug -w ./pug/index.pug -o ../У-ПАК/build\" \"pug -w ./pug/catalog.pug -o ../У-ПАК/build\" \"stylus -w ./stylus/style.styl -o ../У-ПАК/build/style.css\" \"babel js -w -d  build/js\" \"mkdir .\\build\\fonts && copy .\\fonts .\\build\\fonts\\ && mkdir .\\build\\img && copy .\\img .\\build\\img\\\" ",
+    "pug": "pug ./pug/index.pug -o ../У-ПАК/build && pug ./pug/catalog.pug -o ../У-ПАК/build",
     "stylus": "stylus ./stylus/style.styl -o ../У-ПАК/style.css && npx postcss ./style.css --use autoprefixer -d ./ && npx postcss ./style.css --use cssnano > ./build/style.css",
-    "minify": "del /q .\\build\\img && node ./js/imagemin.js && del .\\style.css ",
-    "babel": "babel ./main.js -d ./build && terser ./build/main.js -o ./build/main.js",
+    "minify": "del /q .\\build\\img && node ./js/vendors/imagemin.js && del .\\style.css ",
+    "babel": "babel js -d build/js && terser-folder ./build  -e -x .js -o ./build/",
     "moveFonts": "mkdir .\\build\\fonts  && copy .\\fonts .\\build\\fonts\\",
     "build": "npm run pug && npm run stylus && npm run minify && npm run babel && npm run moveFonts",
     "lintCss": "npx stylelint \"**/*.styl\""
@@ -30,11 +30,13 @@
     "imagemin": "^8.0.1",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-webp": "^7.0.0",
+    "nouislider": "^15.5.1",
     "postcss": "^8.4.7",
     "postcss-cli": "^9.1.0",
     "stylelint": "^14.5.1",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-plugin-stylus": "^0.13.1",
-    "terser": "^5.12.0"
+    "terser": "^5.12.0",
+    "terser-folder": "^2.0.0"
   }
 }

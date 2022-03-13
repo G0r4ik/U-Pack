@@ -2,15 +2,14 @@ button($padding-y = 16px, $padding-x = 48px) {
   background: $color-primary;
   border-radius: 5px;
   padding: $padding-y $padding-x;
-  font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   color: $color-bg;
-  transition: 0.2s background;
+  transition: background 0.2s;
 
   &:hover {
     background: darken(@background, 10%);
-    transition: 0.2s background;
+    transition: background 0.2s;
   }
 }
 

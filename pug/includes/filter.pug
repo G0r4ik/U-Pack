@@ -1,0 +1,104 @@
+.filter
+  label.filter__open(for="filter")
+    img.filter__open-icon(src="./img/filter.svg" alt="filter")
+    span.filter__open-p Фильтр
+  input#filter.filter__open-input(type="checkbox")
+  .filter__background
+    .filter__inner 
+      b.filter__title Меню
+      hr.filter__line
+      details.filter__accordion(open)
+        summary.filter__top-item  Гофрокоробка
+        span.filter__item 4х клапанные коробки
+        span.filter__item Самосборные коробки
+        span.filter__item Кашированные коробки
+        span.filter__item Крупногабаритная тара
+      hr.filter__line
+      details.filter__accordion(open)
+        summary.filter__top-item  Коробки по применению
+        span.filter__item Для склада
+        span.filter__item Для пиццы
+        span.filter__item Для мяса и птицы
+        span.filter__item Лотки для овощей
+        span.filter__item Кондитерские лотки
+        span.filter__item Для напитков
+        span.filter__item Для одежды и обуви
+        span.filter__item Для техники
+        span.filter__item Для детских товаров
+        span.filter__item Для подарков
+      hr.filter__line
+      details.filter__accordion 
+        summary.filter__top-item  Коробки с печатью
+        span.filter__item 4х клапанные коробки
+        span.filter__item Самосборные коробки
+        span.filter__item Кашированные коробки
+        span.filter__item Коробки с флексопечатью
+        span.filter__item Из переплетного картона
+        span.filter__item Для подарков
+        span.filter__item Новогодние коробки
+        span.filter__item Из картона хром-эрзац
+      hr.filter__line
+      details.filter__accordion 
+        summary.filter__top-item  Коробки для подарков
+        span.filter__item Коробки с флексопечатью
+        span.filter__item Из переплетного картона
+        span.filter__item Для подарков
+        span.filter__item Новогодние коробки
+        span.filter__item Из картона хром-эрзац
+      hr.filter__line
+      b.filter__title Параметры
+      hr.filter__line
+      details.filter__accordion(open) 
+        summary.filter__top-item  Цена
+        .filter__range
+          input#filter-price-start.filter__input-range(type="text")
+          label.filter-label-input(for="filter-price-start") Начальная цена
+          input#filter-price-last.filter__input-range(type="text") 
+          label.filter-label-input(for="filter-price-last") Конечная цена
+        #slider-price.range-slider
+      hr.filter__line
+      details.filter__accordion 
+        summary.filter__top-item  Длина
+        .filter__range
+          input#filter-length-start.filter__input-range(type="text")
+          label.filter-label-input(for="filter-length-start") Начальная длинна
+          input#filter-length-last.filter__input-range(type="text")
+          label.filter-label-input(for="filter-length-last") Конечная длинна
+        #slider-length.range-slider
+      hr.filter__line
+      details.filter__accordion 
+        summary.filter__top-item  Ширина
+        .filter__range
+          input#filter-width-start.filter__input-range(type="text")
+          label.filter-label-input(for="filter-width-start") Конечная ширина
+          input#filter-width-last.filter__input-range(type="text")
+          label.filter-label-input(for="filter-width-last") Конечная ширина
+        #slider-width.range-slider
+      hr.filter__line
+      details.filter__accordion 
+        summary.filter__top-item  Высота
+        .filter__range
+          input#filter-height-start.filter__input-range(type="text")
+          label.filter-label-input(for="filter-height-start") Конечная Высота
+          input#filter-height-last.filter__input-range(type="text")
+          label.filter-label-input(for="filter-height-last") Конечная Высота
+        #slider-height.range-slider
+      hr.filter__line
+      details.filter__accordion 
+        summary.filter__top-item  Слойность картона
+        input#filter-layering-three.filter__checkbox(type="checkbox")
+        label.filter__checkbox-label(for="filter-layering-three") Трехслойный
+        input#filter-layering-five.filter__checkbox(type="checkbox")
+        label.filter__checkbox-label(for="filter-layering-five") Пятислойный
+        input#filter-layering-micro.filter__checkbox(type="checkbox")
+        label.filter__checkbox-label(for="filter-layering-micro") Микрогофрокартон
+      hr.filter__line
+      details.filter__accordion 
+        summary.filter__top-item  Цвет
+        input#filter-color-white.filter__checkbox(type="checkbox")
+        label.filter__checkbox-label(for="filter-color-white") Белый
+        input#filter-color-brown.filter__checkbox(type="checkbox")
+        label.filter__checkbox-label(for="filter-color-brown") Бурый
+        input#filter-color-whiteBrown.filter__checkbox(type="checkbox")
+        label.filter__checkbox-label(for="filter-color-whiteBrown") Бело-бурый
+

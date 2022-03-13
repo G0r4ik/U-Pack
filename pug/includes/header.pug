@@ -1,23 +1,23 @@
 header.header 
   .container 
     .header__inner 
-      input.hamburger__checkbox(type="checkbox" name="" id="hamburger__checkbox" )
-      label.hamburger__lines(for="hamburger__checkbox")
+      input.hamburger__checkbox(type="checkbox" id="hamburger__checkbox" )
+      label.hamburger__lines(for="hamburger__checkbox" tabindex="0")
         span.hamburger__line.hamburger__line_1
         span.hamburger__line.hamburger__line_2
         span.hamburger__line.hamburger__line_3
 
       ul.header__list 
         li.header__item 
-          a.header__link(href="#") О компании
+          a.header__link(href="./index.html") О компании
         li.header__item 
-          a.header__link(href="#") Продукция
+          a.header__link(href="./catalog.html") Продукция
         li.header__item 
-          a.header__link(href="#") Коробки на заказ
+          a.header__link(href="./catalog.html") Коробки на заказ
         li.header__item 
           a.header__link(href="#") Контакты
 
-      a.logo(href="index.html")
+      a.logo(href="./index.html")
         picture 
           source(srcset="./img/logo.webp" type="image/webp")
           img.logo__img(src="./img/logo.png" alt="logo")
